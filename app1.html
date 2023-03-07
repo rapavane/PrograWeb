@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-container">
+  <h2>Tiendita</h2>
+
+  <button onclick="agregarProducto()"> Agregar producto</button>
+  <br>
+  <br>
+
+  <div class="w3-responsive">
+  <table class="w3-table-all w3-hoverable">
+    <thead>
+    <tr class="w3-light-grey">
+      <th>Borrar</th>
+      <th>Producto </th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th>Total</th>
+    </tr>
+    </thead>
+    <tbody id="cuerpo_tabla">
+    </tbody>
+  </table>
+  </div>
+</div>
+<br>
+<br>
+<label>TOTAL: </label>
+<input type="text" >
+
+<script>
+  function agregarProducto(){
+    const cuerpotabla = document.getElementById("cuerpo_tabla");
+    //alert("funcion");
+    const renglon = document.createElement("tr");
+    const col_borrar = document.createElement("td");
+    const col_producto = document.createElement("td");
+    const col_cantidad = document.createElement("td");
+    const col_precio = document.createElement("td");
+    const col_total = document.createElement("td");
+
+
+    const input_producto  = document.createElement("input");
+    const input_cantidad  = document.createElement("input");
+    input_cantidad.onchange= calcularTotal();
+    input_cantidad.className="Cantidad";
+    const input_precio  = document.createElement("input");
+    input_precio.onchange = calcularTotal();
+    const input_total  = document.createElement("input");
+    input_total.readOnly=true;
+    input_cantidad.className="Total";
+    input_total.style="background-color: lightgray";
+    const input_borrar  = document.createElement("button");
+    input_borrar.innerHTML= "X";
+
+    col_borrar.appendChild(input_borrar);
+    col_producto.appendChild(input_producto);
+    col_cantidad.appendChild(input_cantidad);
+    col_precio.appendChild(input_precio);
+    col_total.appendChild(input_total);
+
+    renglon.appendChild(col_borrar);
+    renglon.appendChild(col_producto);
+    renglon.appendChild(col_cantidad);
+    renglon.appendChild(col_precio);
+    renglon.appendChild(col_total);
+
+    cuerpotabla.appendChild(renglon)
+
+
+  }
+
+  function calcularTotal(){
+    const datos = document.getElementsByTagName("td");
+
+  }
+
+  function granTotal(){
+    
+  }
+</script>
+
+
+</body>
+</html>
